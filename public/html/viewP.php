@@ -42,7 +42,7 @@ include ('../../php/global/functions/viewF.php');
             <?php endforeach; ?>
         </div>
         <div>
-        <p><strong>Numero de propiedades del usuario::</strong> <?= $total_properties ?></p>
+        <p><strong>Numero de propiedades del usuario:</strong> <?= $total_properties ?></p>
             <!-- Mostrar botón "Arrendar" solo si el usuario no es el propietario y la propiedad no está arrendada -->
             <?php if (!$is_owner && !$is_rented): ?>
                 <button onclick="mostrarCalendarios(<?= $property_id ?>)">Arrendar</button>

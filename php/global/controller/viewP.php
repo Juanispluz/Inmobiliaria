@@ -85,7 +85,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
         // Consulta para obtener el total de propiedades publicadas por el usuario
         $total_properties = 0;
-        $sql_total_properties = "SELECT COUNT(*) AS total FROM P_Propiedad WHERE id_usuario = ?";
+        $sql_total_properties = "SELECT numero_total_propiedades_usuario(?) AS total";
         $stmt_total_properties = $conexion->prepare($sql_total_properties);
         $stmt_total_properties->bind_param("i", $property['id_usuario']);
         $stmt_total_properties->execute();
