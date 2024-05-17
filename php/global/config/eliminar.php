@@ -19,7 +19,7 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 $property_id = $_GET['id'];
 
 // Verificar si el usuario es el propietario de la propiedad que intenta eliminar
-$sql_check_owner = "SELECT id_usuario FROM P_Propiedad WHERE id_p_propiedad = ?";
+$sql_check_owner = "SELECT id_usuario FROM p_propiedad WHERE id_p_propiedad = ?";
 $stmt_check_owner = $conexion->prepare($sql_check_owner);
 $stmt_check_owner->bind_param("i", $property_id);
 $stmt_check_owner->execute();
@@ -39,10 +39,16 @@ if ($_SESSION['user_id'] != $property_owner_id) {
 }
 
 // Eliminar la propiedad
-$sql_delete_property = "DELETE FROM P_Propiedad WHERE id_p_propiedad = ?";
+$sql_delete_property = "DELETE FROM p_propiedad WHERE id_p_propiedad = ?";
 $stmt_delete_property = $conexion->prepare($sql_delete_property);
 $stmt_delete_property->bind_param("i", $property_id);
 $stmt_delete_property->execute();
+
+// Eliminar la reservación asociada a la propiedad
+$sql_delete_reservation = "DELETE FROM reservacion WHERE id_p_propiedad = ?";
+$stmt_delete_reservation = $conexion->prepare($sql_delete_reservation);
+$stmt_delete_reservation->bind_param("i", $property_id);
+$stmt_delete_reservation->execute();
 
 // Redirigir a la página de inicio
 header("Location: ../../../public/html/index.php");

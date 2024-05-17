@@ -62,3 +62,7 @@ function validarFechasYArrendar(propertyId) {
         arrendarPropiedad(propertyId);
     }
 }
+
+function confirmarEliminar() {
+    return confirm('¿Estás seguro de que deseas eliminar esta propiedad? Esta acción no se puede deshacer.');
+}

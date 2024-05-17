@@ -58,7 +58,7 @@ include ('../../php/global/functions/viewF.php');
             <?php if ($is_owner): ?>
                 <a href="editar.php?id=<?= $property_id ?>">Editar Propiedad</a>
                 <a href="../../php/global/config/eliminar.php?id=<?= $property_id ?>"
-                   onclick="return confirm('¿Estás seguro de que deseas eliminar esta propiedad?');">Eliminar</a>
+                    onclick="return confirmarEliminar();">Eliminar</a>
             <?php endif; ?>
         </div>
 
