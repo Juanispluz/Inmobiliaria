@@ -14,6 +14,7 @@ require_once ('../../php/global/controller/index.php');
     <div class="container">
         <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
             <button onclick="window.location='publicar.php'">Publicar</button>
+            <button onclick="window.location='perfil.php'">Ver perfil</button>
             <button onclick="window.location='../../php/controller/logout.php'">Logout</button>
         <?php else: ?>
             <button onclick="window.location='login.php'">Iniciar sesión</button>

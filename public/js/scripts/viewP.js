@@ -51,3 +51,14 @@ function arrendarPropiedad(propertyId) {
     };
     xhr.send("propertyId=" + propertyId + "&fechaLlegada=" + fechaLlegada + "&fechaSalida=" + fechaSalida);
 }
+
+function validarFechasYArrendar(propertyId) {
+    var fechaLlegada = document.getElementById("fecha_llegada_" + propertyId).value;
+    var fechaSalida = document.getElementById("fecha_salida_" + propertyId).value;
+
+    if (fechaLlegada >= fechaSalida) {
+        alert("La fecha de llegada debe ser anterior a la fecha de salida.");
+    } else {
+        arrendarPropiedad(propertyId);
+    }
+}

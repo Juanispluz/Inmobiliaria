@@ -84,6 +84,17 @@ CREATE TABLE servicios (
   PRIMARY KEY (id_p_propiedad)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE usuarios_eliminados (
+  id_usuario_eliminado int(11) NOT NULL,
+  nombre varchar(45) DEFAULT NULL,
+  apellido varchar(45) DEFAULT NULL,
+  correo varchar(200) DEFAULT NULL,
+  telefono varchar(20) DEFAULT NULL,
+  contraseña varchar(255) DEFAULT NULL,
+  fecha_eliminacion DATETIME,
+  PRIMARY KEY (id_usuario_eliminado)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 -- Inserciones para la tabla universidad
 INSERT INTO universidad (id_universidad, nombreU) VALUES
 (1, 'UCC'),

@@ -67,8 +67,8 @@ include ('../../php/global/functions/viewF.php');
             <input type="date" id="fecha_llegada_<?= $property_id ?>" name="fecha_llegada">
             <label for="fecha_salida_<?= $property_id ?>">Fecha de Salida:</label>
             <input type="date" id="fecha_salida_<?= $property_id ?>" name="fecha_salida">
-            <button onclick="arrendarPropiedad(<?= $property_id ?>)">Confirmar Arriendo</button>
-        </div>        
+            <button onclick="validarFechasYArrendar(<?= $property_id ?>)">Confirmar Arriendo</button>
+        </div>      
     </div>
 <?php endif; ?>
 </body>
