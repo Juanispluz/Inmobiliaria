@@ -12,4 +12,4 @@ END;
 
 DELIMITER ;
 
--- Para el usuario que vaya arrendar
+-- No esta implementado

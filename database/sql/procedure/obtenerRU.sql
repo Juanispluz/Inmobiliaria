@@ -1,4 +1,4 @@
---obtener reservaciones de user
+--obtener reservaciones del usuario
 DELIMITER //
 
 CREATE PROCEDURE ObtenerReservacionesUsuario (
@@ -9,3 +9,5 @@ BEGIN
 END //
 
 DELIMITER ;
+
+-- No esta implementado
