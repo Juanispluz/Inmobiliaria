@@ -50,6 +50,12 @@ $stmt_delete_reservation = $conexion->prepare($sql_delete_reservation);
 $stmt_delete_reservation->bind_param("i", $property_id);
 $stmt_delete_reservation->execute();
 
+// Eliminar los servicios asociados a la propiedad
+$sql_delete_services = "DELETE FROM servicios WHERE id_p_propiedad = ?";
+$stmt_delete_services = $conexion->prepare($sql_delete_services);
+$stmt_delete_services->bind_param("i", $property_id);
+$stmt_delete_services->execute();
+
 // Redirigir a la página de inicio
 header("Location: ../../../public/html/index.php");
 exit;

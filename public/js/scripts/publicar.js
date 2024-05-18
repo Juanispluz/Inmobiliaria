@@ -19,3 +19,28 @@ function handleFileSelect(event) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.service-button');
+    buttons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            toggleService(button.dataset.serviceName, button);
+        });
+    });
+});
+
+function toggleService(serviceName, button) {
+    event.preventDefault();
+
+    const input = document.getElementById(serviceName);
+    const isChecked = input.checked;
+
+    input.checked = !isChecked;
+
+    if (isChecked) {
+        button.classList.remove('btn-primary');
+        button.classList.add('btn-outline-primary');
+    } else {
+        button.classList.remove('btn-outline-primary');
+        button.classList.add('btn-primary');
+    }
+}

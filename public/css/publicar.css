@@ -1,0 +1,15 @@
+.form-check-input {
+    display: none;
+}
+
+/* Estilo para el botón personalizado */
+.btn-secondary {
+    margin-top: 10px;
+}
+
+/* Estilo para las miniaturas de vista previa */
+#preview img {
+    max-height: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
